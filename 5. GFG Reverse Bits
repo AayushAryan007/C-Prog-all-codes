@@ -1,0 +1,53 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+class Solution {
+  public:
+    long long reversedBits(long long X) {
+        // code here
+        vector<int> ans;
+        
+        //convert to binary format
+        while(X!=0){
+            int digit=X%2;
+            ans.push_back(digit);
+            X/=2;
+        }
+        
+        //fill in extra bits with 0
+        while(ans.size()!=32){
+            ans.push_back(0);
+        }
+        
+        //Reverse the values
+        reverse(ans.begin(),ans.end());
+        
+        //define inital integer cariable to the output
+        long long val=0;
+        
+        //convert to decimal  universal method must be saved
+        for(int i=0;i<32;i++){
+            val=val+pow(2,i)*ans[i];
+        }
+        
+        return val;
+    }
+};
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long X;
+        
+        cin>>X;
+
+        Solution ob;
+        cout << ob.reversedBits(X) << endl;
+    }
+    return 0;
+}
+// } Driver Code Ends
