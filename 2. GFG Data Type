@@ -1,0 +1,50 @@
+//{ Driver Code Starts
+// Initial Template for C++
+
+// {Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+// } Driver Code Ends
+
+
+// } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int dataTypeSize(string str) {
+        int x;
+        // your code here
+        if(str=="Character")
+            x=1;
+        // float, double, long 4,8,16
+        else if(str=="Integer")
+        x=4;
+        else if(str=="Float")
+        x=4;
+        else if(str=="Double")
+         x=8;
+        else if(str=="Long")
+        x=8;  
+        
+        return x;
+    }
+
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string str;
+        cin >> str;
+        Solution ob;
+        cout << ob.dataTypeSize(str);
+        cout << "\n";
+    }
+    return 0;
+}
+
+// } Driver Code Ends
